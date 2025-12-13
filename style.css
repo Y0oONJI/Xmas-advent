@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* 눈 내리는 효과 */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  color: white;
+  font-size: 1.5em;
+  font-family: Arial;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 1s; }
+.snowflake:nth-child(3) { left: 30%; animation-duration: 14s; animation-delay: 2s; }
+.snowflake:nth-child(4) { left: 40%; animation-duration: 11s; animation-delay: 0.5s; }
+.snowflake:nth-child(5) { left: 50%; animation-duration: 13s; animation-delay: 1.5s; }
+.snowflake:nth-child(6) { left: 60%; animation-duration: 15s; animation-delay: 2.5s; }
+.snowflake:nth-child(7) { left: 70%; animation-duration: 12s; animation-delay: 0.8s; }
+.snowflake:nth-child(8) { left: 80%; animation-duration: 14s; animation-delay: 1.8s; }
+.snowflake:nth-child(9) { left: 90%; animation-duration: 11s; animation-delay: 0.3s; }
+.snowflake:nth-child(10) { left: 95%; animation-duration: 13s; animation-delay: 1.3s; }
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+}
+
+header h1 {
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.subtitle {
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 카드 스타일 */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.input-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-card h2 {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* 소원 표시 영역 */
+.wishes-section {
+  margin-top: 40px;
+}
+
+.section-title {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.wish-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wish-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.wish-card:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.wish-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.wish-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: white;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.wish-name {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #333;
+}
+
+.wish-text {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.05em;
+  margin-bottom: 15px;
+}
+
+.wish-date {
+  color: #999;
+  font-size: 0.9em;
+  text-align: right;
+}
+
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  padding: 40px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .wishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-card {
+    padding: 20px;
+  }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wish-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
