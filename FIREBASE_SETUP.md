@@ -6,14 +6,14 @@
 
 1. [Firebase Console](https://console.firebase.google.com/)에 접속
 2. "프로젝트 추가" 클릭
-3. 프로젝트 이름 입력 (예: "xmas-advent")
+3. 프로젝트 이름 입력 (예: "newyear-wishes")
 4. Google Analytics 설정 (선택사항)
 5. 프로젝트 생성 완료
 
 ## 2. 웹 앱 등록
 
 1. Firebase 프로젝트 대시보드에서 "웹 앱 추가" 클릭 (</> 아이콘)
-2. 앱 닉네임 입력 (예: "Xmas Advent Web")
+2. 앱 닉네임 입력 (예: "New Year Wishes Web")
 3. "앱 등록" 클릭
 4. 나타나는 설정 값 복사
 
